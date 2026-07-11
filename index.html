@@ -1,14 +1,201 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SpotKirtasiye.com</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spot Kırtasiye - Resmi Web Sitesi</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .card {
+            background: white;
+            border-radius: 24px;
+            padding: 60px 40px;
+            max-width: 600px;
+            width: 100%;
+            text-align: center;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+            animation: fadeIn 0.8s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .logo {
+            width: 100px;
+            height: 100px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 24px;
+            font-size: 40px;
+            color: white;
+        }
+
+        h1 {
+            font-size: 36px;
+            color: #1a1a2e;
+            margin-bottom: 8px;
+            font-weight: 700;
+        }
+
+        .subtitle {
+            font-size: 18px;
+            color: #666;
+            margin-bottom: 32px;
+            line-height: 1.6;
+        }
+
+        .badge {
+            display: inline-block;
+            background: #e8f5e9;
+            color: #2e7d32;
+            padding: 8px 20px;
+            border-radius: 50px;
+            font-size: 14px;
+            font-weight: 500;
+            margin-bottom: 32px;
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            margin-bottom: 32px;
+            text-align: left;
+        }
+
+        .feature {
+            background: #f8f9ff;
+            padding: 16px;
+            border-radius: 12px;
+            transition: transform 0.2s;
+        }
+
+        .feature:hover {
+            transform: translateY(-2px);
+        }
+
+        .feature-icon {
+            font-size: 24px;
+            margin-bottom: 8px;
+        }
+
+        .feature h3 {
+            font-size: 14px;
+            color: #1a1a2e;
+            margin-bottom: 4px;
+        }
+
+        .feature p {
+            font-size: 12px;
+            color: #888;
+        }
+
+        .btn {
+            display: inline-block;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 16px 48px;
+            border-radius: 50px;
+            font-size: 18px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
+        }
+
+        .social {
+            margin-top: 24px;
+            display: flex;
+            justify-content: center;
+            gap: 16px;
+        }
+
+        .social a {
+            color: #999;
+            text-decoration: none;
+            font-size: 14px;
+            transition: color 0.2s;
+        }
+
+        .social a:hover {
+            color: #667eea;
+        }
+
+        .footer {
+            margin-top: 24px;
+            font-size: 12px;
+            color: #bbb;
+        }
+
+        @media (max-width: 480px) {
+            .card { padding: 40px 24px; }
+            h1 { font-size: 28px; }
+            .features { grid-template-columns: 1fr; }
+        }
+    </style>
 </head>
-<body style="margin:0;font-family:Arial;background:#f5f5f5;display:flex;justify-content:center;align-items:center;height:100vh;">
-<div style="text-align:center">
-<h1 style="font-size:56px;color:#E53935;">SpotKirtasiye.com</h1>
-<p style="font-size:22px;color:#555;">Çok Yakında Hizmetinizde</p>
-</div>
+<body>
+    <div class="card">
+        <div class="logo">✏️</div>
+        <h1>Spot Kırtasiye</h1>
+        <p class="subtitle">Kaliteli kırtasiye ürünleri, okul malzemeleri ve ofis gereçleri için güvenilir adresiniz.</p>
+        <div class="badge">🛒 Yeni koleksiyonlarımız yolda!</div>
+        
+        <div class="features">
+            <div class="feature">
+                <div class="feature-icon">📚</div>
+                <h3>Okul Malzemeleri</h3>
+                <p>Defter, kalem, çanta ve daha fazlası</p>
+            </div>
+            <div class="feature">
+                <div class="feature-icon">🖊️</div>
+                <h3>Ofis Gereçleri</h3>
+                <p>Profesyonel ofis ürünleri</p>
+            </div>
+            <div class="feature">
+                <div class="feature-icon">🎨</div>
+                <h3>Sanat & Hobi</h3>
+                <p>Boya, fırça ve el sanatları</p>
+            </div>
+            <div class="feature">
+                <div class="feature-icon">🚚</div>
+                <h3>Hızlı Teslimat</h3>
+                <p>Ücretsiz kargo seçenekleri</p>
+            </div>
+        </div>
+
+        <a href="#" class="btn">Alışverişe Başla</a>
+
+        <div class="social">
+            <a href="#">Instagram</a>
+            <a href="#">Facebook</a>
+            <a href="#">Twitter</a>
+            <a href="#">WhatsApp</a>
+        </div>
+
+        <div class="footer">
+            © 2026 Spot Kırtasiye. Tüm hakları saklıdır.
+        </div>
+    </div>
 </body>
 </html>
