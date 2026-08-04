@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Spot Kırtasiye - Müşteri Yorumları. Binlerce memnun müşterimizin deneyimleri okuyun.">
+    <title>Müşteri Yorumları - Spot Kırtasiye</title>
+    <link rel="stylesheet" href="../styles.css">
+    <style>
+        .reviews-container {
+            background: white;
+            border-radius: 24px;
+            padding: 60px 40px;
+            margin: 20px auto;
+            max-width: 1000px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+        }
+
+        .reviews-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+
+        .stat-card {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 24px;
+            border-radius: 12px;
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .stat-label {
+            font-size: 14px;
+            opacity: 0.9;
+        }
+
+        .reviews-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 24px;
+            margin-bottom: 40px;
+        }
+
+        .review-card {
+            background: #f8f9ff;
+            padding: 24px;
+            border-radius: 12px;
+            border-left: 4px solid #667eea;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .review-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+        }
+
+        .review-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: start;
+            margin-bottom: 12px;
+        }
+
+        .review-name {
+            font-weight: 700;
+            color: #1a1a2e;
+            font-size: 16px;
+        }
+
+        .review-rating {
+            color: #ffc107;
+            font-size: 14px;
+        }
+
+        .review-date {
+            font-size: 12px;
+            color: #999;
+            margin-top: 4px;
+        }
+
+        .review-text {
+            color: #666;
+            line-height: 1.6;
+            font-size: 14px;
+            margin: 12px 0;
+        }
+
+        .review-category {
+            display: inline-block;
+            background: #667eea;
+            color: white;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 11px;
+            font-weight: 600;
+            margin-top: 8px;
+        }
+
+        .form-section {
+            background: #f8f9ff;
+            padding: 40px;
+            border-radius: 12px;
+            margin-top: 40px;
+        }
+
+        .form-section h3 {
+            color: #667eea;
+            margin-bottom: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            color: #1a1a2e;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 12px 16px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-family: inherit;
+            font-size: 14px;
+            transition: border-color 0.2s;
+        }
+
+        input:focus, textarea:focus {
+            outline: none;
+            border-color: #667eea;
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        .rating-input {
+            display: flex;
+            gap: 8px;
+        }
+
+        .star {
+            font-size: 32px;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+
+        .star:hover {
+            transform: scale(1.2);
+        }
+
+        .btn-submit {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 14px 40px;
+            border: none;
+            border-radius: 50px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .btn-submit:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
+        }
+
+        .nav-link {
+            display: inline-block;
+            margin-top: 20px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 12px 24px;
+            border-radius: 50px;
+            text-decoration: none;
+            transition: transform 0.2s;
+        }
+
+        .nav-link:hover {
+            transform: translateY(-2px);
+        }
+
+        @media (max-width: 768px) {
+            .reviews-container {
+                padding: 30px 20px;
+            }
+
+            .reviews-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .form-section {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); min-height: 100vh; padding: 20px;">
+    <div class="reviews-container">
+        <h1 style="color: #1a1a2e; text-align: center; margin-bottom: 40px;">Müşteri Yorumları</h1>
+
+        <div class="reviews-stats">
+            <div class="stat-card">
+                <div class="stat-number">4.9★</div>
+                <div class="stat-label">Ortalama Puan</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">12,547</div>
+                <div class="stat-label">Toplam Yorum</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">98%</div>
+                <div class="stat-label">Memnuniyet Oranı</div>
+            </div>
+        </div>
+
+        <div class="reviews-grid">
+            <div class="review-card">
+                <div class="review-header">
+                    <div>
+                        <div class="review-name">Ayşe Yılmaz</div>
+                        <div class="review-date">3 gün önce</div>
+                    </div>
+                    <div class="review-rating">⭐⭐⭐⭐⭐</div>
+                </div>
+                <div class="review-text">
+                    "Okul açılışı için aldığım defterler ve kalemler mükemmel kalitede. Teslimat çok hızlı ve güvenli yapıldı. 
+                    Kesinlikle tavsiye ederim!"
+                </div>
+                <span class="review-category">Okul Malzemeleri</span>
+            </div>
+
+            <div class="review-card">
+                <div class="review-header">
+                    <div>
+                        <div class="review-name">Mehmet Kaya</div>
+                        <div class="review-date">1 hafta önce</div>
+                    </div>
+                    <div class="review-rating">⭐⭐⭐⭐⭐</div>
+                </div>
+                <div class="review-text">
+                    "Ofisim için aldığım organizerler ve dosya sistemleri çok pratik. Müşteri hizmetleri de çok yardımcı oldu. 
+                    Fiyat-kalite oranı gerçekten iyi."
+                </div>
+                <span class="review-category">Ofis Gereçleri</span>
+            </div>
+
+            <div class="review-card">
+                <div class="review-header">
+                    <div>
+                        <div class="review-name">Zeynep Demirci</div>
+                        <div class="review-date">2 hafta önce</div>
+                    </div>
+                    <div class="review-rating">⭐⭐⭐⭐⭐</div>
+                </div>
+                <div class="review-text">
+                    "Sanat malzemeleri çok kaliteli ve çeşitli. Boya setleri profesyonel kalitede ama fiyatları çok uygun. 
+                    Hep buradan alacağım."
+                </div>
+                <span class="review-category">Sanat & Hobi</span>
+            </div>
+
+            <div class="review-card">
+                <div class="review-header">
+                    <div>
+                        <div class="review-name">Ali Şahin</div>
+                        <div class="review-date">2 hafta önce</div>
+                    </div>
+                    <div class="review-rating">⭐⭐⭐⭐⭐</div>
+                </div>
+                <div class="review-text">
+                    "WhatsApp üzerinden sipariş verdim, 2 saat içinde teslim alındı! Ürünler ambalajlanmış, teslimat başarılı. 
+                    Harika bir hizmet."
+                </div>
+                <span class="review-category">Teslimat Hizmetleri</span>
+            </div>
+
+            <div class="review-card">
+                <div class="review-header">
+                    <div>
+                        <div class="review-name">Fatma Güzel</div>
+                        <div class="review-date">3 hafta önce</div>
+                    </div>
+                    <div class="review-rating">⭐⭐⭐⭐⭐</div>
+                </div>
+                <div class="review-text">
+                    "Çocuklarım için aldığım eğitici kırtasiye setleri çok beğendi. Ürün kalitesi harika ve tasarımları çok güzel. 
+                    Tekrar alacağız."
+                </div>
+                <span class="review-category">Çocuk Ürünleri</span>
+            </div>
+
+            <div class="review-card">
+                <div class="review-header">
+                    <div>
+                        <div class="review-name">Hasan Demir</div>
+                        <div class="review-date">1 ay önce</div>
+                    </div>
+                    <div class="review-rating">⭐⭐⭐⭐⭐</div>
+                </div>
+                <div class="review-text">
+                    "İnsan tutum ve davranışları gerçekten profesyonel. Ürün seçiminde yardım ettiler, her zaman yardımcı ve kibar. 
+                    Harika bir işletme."
+                </div>
+                <span class="review-category">Müşteri Hizmetleri</span>
+            </div>
+        </div>
+
+        <div class="form-section">
+            <h3>Siz De Yorum Yazın</h3>
+            <form id="reviewForm">
+                <div class="form-group">
+                    <label for="reviewer-name">Adınız *</label>
+                    <input type="text" id="reviewer-name" name="name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="reviewer-email">Email *</label>
+                    <input type="email" id="reviewer-email" name="email" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Puanınız *</label>
+                    <div class="rating-input" id="ratingInput">
+                        <span class="star" data-rating="1">☆</span>
+                        <span class="star" data-rating="2">☆</span>
+                        <span class="star" data-rating="3">☆</span>
+                        <span class="star" data-rating="4">☆</span>
+                        <span class="star" data-rating="5">☆</span>
+                    </div>
+                    <input type="hidden" id="rating" name="rating" value="0">
+                </div>
+
+                <div class="form-group">
+                    <label for="reviewer-comment">Yorumunuz *</label>
+                    <textarea id="reviewer-comment" name="comment" required></textarea>
+                </div>
+
+                <button type="submit" class="btn-submit">Yorumu Gönder</button>
+            </form>
+        </div>
+
+        <div style="text-align: center; margin-top: 40px;">
+            <a href="../index.html" class="nav-link">← Anasayfaya Dön</a>
+        </div>
+    </div>
+
+    <script>
+        // Yıldız rating sistemi
+        const stars = document.querySelectorAll('.star');
+        const ratingInput = document.getElementById('rating');
+
+        stars.forEach(star => {
+            star.addEventListener('click', () => {
+                const rating = star.getAttribute('data-rating');
+                ratingInput.value = rating;
+                
+                stars.forEach((s, index) => {
+                    if (index < rating) {
+                        s.textContent = '★';
+                    } else {
+                        s.textContent = '☆';
+                    }
+                });
+            });
+
+            star.addEventListener('mouseover', () => {
+                const rating = star.getAttribute('data-rating');
+                stars.forEach((s, index) => {
+                    if (index < rating) {
+                        s.textContent = '★';
+                    } else {
+                        s.textContent = '☆';
+                    }
+                });
+            });
+        });
+
+        document.getElementById('ratingInput').addEventListener('mouseleave', () => {
+            const rating = ratingInput.value;
+            stars.forEach((s, index) => {
+                if (index < rating) {
+                    s.textContent = '★';
+                } else {
+                    s.textContent = '☆';
+                }
+            });
+        });
+
+        // Form gönderme
+        document.getElementById('reviewForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const name = document.getElementById('reviewer-name').value;
+            const email = document.getElementById('reviewer-email').value;
+            const rating = document.getElementById('rating').value;
+            const comment = document.getElementById('reviewer-comment').value;
+
+            if (!name || !email || !rating || !comment) {
+                alert('Lütfen tüm alanları doldurunuz!');
+                return;
+            }
+
+            const whatsappMessage = `Merhaba,\n\nYeni Yorum:\nAdı: ${name}\nEmail: ${email}\nPuan: ${'⭐'.repeat(rating)}\nYorum: ${comment}`;
+            const whatsappURL = `https://wa.me/905332564848?text=${encodeURIComponent(whatsappMessage)}`;
+            
+            window.open(whatsappURL, '_blank');
+            alert('Yorumunuz WhatsApp\'ta hazırlandı. Göndermek için tıklayın.');
+            this.reset();
+            ratingInput.value = 0;
+            stars.forEach(s => s.textContent = '☆');
+        });
+    </script>
+</body>
+</html>
