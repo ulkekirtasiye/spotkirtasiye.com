@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Spot Kırtasiye - Blog. Kırtasiye trendleri, ürün önerileri ve ipuçları.">
+    <title>Blog - Spot Kırtasiye</title>
+    <link rel="stylesheet" href="../styles.css">
+    <style>
+        .blog-container {
+            background: white;
+            border-radius: 24px;
+            padding: 60px 40px;
+            margin: 20px auto;
+            max-width: 1000px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+        }
+
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 24px;
+            margin-bottom: 40px;
+        }
+
+        .blog-card {
+            background: #f8f9ff;
+            border-radius: 12px;
+            overflow: hidden;
+            transition: transform 0.2s, box-shadow 0.2s;
+            cursor: pointer;
+        }
+
+        .blog-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+        }
+
+        .blog-image {
+            width: 100%;
+            height: 180px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 60px;
+        }
+
+        .blog-content {
+            padding: 20px;
+        }
+
+        .blog-category {
+            font-size: 11px;
+            color: #667eea;
+            text-transform: uppercase;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .blog-title {
+            font-size: 18px;
+            font-weight: 700;
+            color: #1a1a2e;
+            margin-bottom: 8px;
+            line-height: 1.4;
+        }
+
+        .blog-excerpt {
+            font-size: 13px;
+            color: #888;
+            line-height: 1.6;
+            margin-bottom: 12px;
+        }
+
+        .blog-meta {
+            font-size: 12px;
+            color: #999;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .read-more {
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.2s;
+        }
+
+        .read-more:hover {
+            color: #764ba2;
+        }
+
+        .nav-link {
+            display: inline-block;
+            margin-top: 20px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 12px 24px;
+            border-radius: 50px;
+            text-decoration: none;
+            transition: transform 0.2s;
+        }
+
+        .nav-link:hover {
+            transform: translateY(-2px);
+        }
+
+        .coming-soon {
+            text-align: center;
+            padding: 40px 20px;
+            color: #999;
+        }
+
+        .coming-soon-icon {
+            font-size: 80px;
+            margin-bottom: 20px;
+        }
+
+        @media (max-width: 768px) {
+            .blog-container {
+                padding: 30px 20px;
+            }
+
+            .blog-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); min-height: 100vh; padding: 20px;">
+    <div class="blog-container">
+        <h1 style="color: #1a1a2e; text-align: center; margin-bottom: 40px;">Blog & Haberler</h1>
+
+        <div class="blog-grid">
+            <div class="blog-card">
+                <div class="blog-image">📚</div>
+                <div class="blog-content">
+                    <div class="blog-category">Öğrenci Rehberi</div>
+                    <div class="blog-title">Başarılı Bir Okul Yılı İçin Doğru Malzemeleri Seçin</div>
+                    <div class="blog-excerpt">Okul açılmadan önce ihtiyacınız olan tüm kırtasiye ürünlerinin listesini hazırladık. Kalite ve fiyat dengesini sağlamak için ipuçları...</div>
+                    <div class="blog-meta">
+                        <span>15 Ağustos 2026</span>
+                        <a href="#" class="read-more">Oku →</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="blog-card">
+                <div class="blog-image">🎨</div>
+                <div class="blog-content">
+                    <div class="blog-category">Sanat & Hobi</div>
+                    <div class="blog-title">Ev Sanatçıları İçin En İyi Boya Setleri</div>
+                    <div class="blog-excerpt">Profesyonel kalitede ürünler ile başlayın. Farklı boya türleri ve özellikleri hakkında detaylı karşılaştırma yapımız...</div>
+                    <div class="blog-meta">
+                        <span>12 Ağustos 2026</span>
+                        <a href="#" class="read-more">Oku →</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="blog-card">
+                <div class="blog-image">💼</div>
+                <div class="blog-content">
+                    <div class="blog-category">Ofis Trendleri</div>
+                    <div class="blog-title">2026 Yılında Ofis Düzenlemeleri Nasıl Olmalı?</div>
+                    <div class="blog-excerpt">Modern çalışma alanları için pratik ve estetik kırtasiye çözümleri. Verimlilik artıran düzenlemeler...</div>
+                    <div class="blog-meta">
+                        <span>10 Ağustos 2026</span>
+                        <a href="#" class="read-more">Oku →</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="blog-card">
+                <div class="blog-image">✏️</div>
+                <div class="blog-content">
+                    <div class="blog-category">Ürün İncelemesi</div>
+                    <div class="blog-title">En Kaliteli Kuru Temizleyici Kalemler Karşılaştırması</div>
+                    <div class="blog-excerpt">Pazar ve stüdyolarda çok kullanılan kalemler arasında hangisi daha iyi? Detaylı test sonuçları...</div>
+                    <div class="blog-meta">
+                        <span>8 Ağustos 2026</span>
+                        <a href="#" class="read-more">Oku →</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="blog-card">
+                <div class="blog-image">🎁</div>
+                <div class="blog-content">
+                    <div class="blog-category">Hediye Önerileri</div>
+                    <div class="blog-title">Her Yaş İçin Harika Kırtasiye Hediyeleri</div>
+                    <div class="blog-excerpt">Doğum günü, mezuniyet veya özel günler için en uygun kırtasiye hediye seçeneklerini keşfedin...</div>
+                    <div class="blog-meta">
+                        <span>5 Ağustos 2026</span>
+                        <a href="#" class="read-more">Oku →</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="blog-card">
+                <div class="blog-image">💡</div>
+                <div class="blog-content">
+                    <div class="blog-category">İpuçları & Hileleri</div>
+                    <div class="blog-title">Kalemlerinizi Daha Uzun Süre Sağlıklı Tutmanın Yolları</div>
+                    <div class="blog-excerpt">Kalemlerinizin ömrünü uzatmak ve kalitesini korunak için pratik tavsiyeler ve bakım yöntemleri...</div>
+                    <div class="blog-meta">
+                        <span>1 Ağustos 2026</span>
+                        <a href="#" class="read-more">Oku →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="coming-soon">
+            <div class="coming-soon-icon">📰</div>
+            <h3 style="color: #1a1a2e; margin-bottom: 12px;">Daha Fazla Yazı Yakında</h3>
+            <p>Kırtasiye dünyasıyla ilgili düzenli olarak yeni yazılar ve haberler paylaşacağız. Haber bülteni aboneliğini açın!</p>
+        </div>
+
+        <div style="text-align: center; margin-top: 40px;">
+            <a href="../index.html" class="nav-link">← Anasayfaya Dön</a>
+        </div>
+    </div>
+</body>
+</html>
