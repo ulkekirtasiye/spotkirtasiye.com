@@ -1,35 +1,9 @@
 // Sayfayı Başlatma
 document.addEventListener('DOMContentLoaded', () => {
-    initNavigation();
     initSmoothScroll();
-    initContactForm();
     initProductFilters();
     updateCurrentYear();
 });
-
-// Navigation Aktif Link Güncelle
-function initNavigation() {
-    const navLinks = document.querySelectorAll('nav a');
-    const sections = document.querySelectorAll('section[id]');
-
-    window.addEventListener('scroll', () => {
-        let current = '';
-        sections.forEach(section => {
-            const sectionTop = section.offsetTop;
-            const sectionHeight = section.clientHeight;
-            if (pageYOffset >= sectionTop - 200) {
-                current = section.getAttribute('id');
-            }
-        });
-
-        navLinks.forEach(link => {
-            link.classList.remove('active');
-            if (link.getAttribute('href').slice(1) === current) {
-                link.classList.add('active');
-            }
-        });
-    });
-}
 
 // Smooth Scroll
 function initSmoothScroll() {
@@ -49,12 +23,12 @@ function initContactForm() {
     const form = document.getElementById('contactForm');
     if (!form) return;
 
-    form.addEventListener('submit', async (e) => {
+    form.addEventListener('submit', (e) => {
         e.preventDefault();
         
-        const name = document.getElementById('name').value;
-        const email = document.getElementById('email').value;
-        const message = document.getElementById('message').value;
+        const name = document.getElementById('name')?.value;
+        const email = document.getElementById('email')?.value;
+        const message = document.getElementById('message')?.value;
 
         if (!name || !email || !message) {
             showMessage('Lütfen tüm alanları doldurunuz!', 'error');
@@ -159,10 +133,10 @@ function searchProducts(query) {
     const searchQuery = query.toLowerCase();
 
     productCards.forEach(card => {
-        const productName = card.querySelector('.product-name')?.textContent.toLowerCase();
-        const productDesc = card.querySelector('.product-description')?.textContent.toLowerCase();
+        const productName = card.querySelector('.product-name')?.textContent.toLowerCase() || '';
+        const productDesc = card.querySelector('.product-description')?.textContent.toLowerCase() || '';
 
-        if (productName?.includes(searchQuery) || productDesc?.includes(searchQuery)) {
+        if (productName.includes(searchQuery) || productDesc.includes(searchQuery)) {
             card.style.display = 'block';
         } else {
             card.style.display = 'none';
@@ -192,6 +166,15 @@ style.textContent = `
         to {
             transform: translateX(400px);
             opacity: 0;
+        }
+    }
+
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+        }
+        to {
+            opacity: 1;
         }
     }
 `;
